@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --color1: #fff;
+  --color2: #111;
+  --btn: #29a8ff;
+  --btnHover: #00396e;
+  --btnActive: #005db2;
+  --total: #111;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+  background: #111;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+h1 {
+  margin-bottom: auto;
+}
+
+button {
+  font-size: 32px;
+  border: none;
+  background: var(--btn);
+  color: var(--color1);
+  box-shadow: -9px 13px 23px rgba(0, 163, 255, 0.65),
+    inset -3px 4px 11px #b0dfff;
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+button svg path {
+  fill: var(--color1);
+}
+
+button:hover {
+  background-color: var(--btnHover);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+button:active {
+  background-color: var(--btnActive);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: scale(0.95) translate(2px, 2px);
+}
+
+.calculator {
+  background: linear-gradient(
+    167.27deg,
+    #f7f8fb -5.94%,
+    rgba(247, 248, 251, 0.19) 103.62%
+  );
+  border-radius: 39px;
+  padding: 60px 30px;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: auto;
+}
+
+.calculator__top {
+  min-height: 160px;
+  margin-bottom: 40px;
+  text-align: right;
+  border: 3px solid var(--color1);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.calculator__top-operation {
+  min-height: 25px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+}
+
+.calculator__top-total {
+  font-weight: 900;
+  font-size: 64px;
+  text-shadow: 2px 2px 1px var(--total);
+  margin-top: 15px;
+  min-height: 77px;
+}
+
+.calculator__bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.calculator__bottom button {
+}
+
+.operation-minus {
+}
+
+.operation-plus {
+  grid-row: span 2;
+}
+
+.number-zero {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+button[data-equals] {
+  grid-row: span 2;
+}
+
+button[data-point] {
+  grid-row: span 2;
+}
