@@ -6,16 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <script src="script.js" type="module"></script>
   <title>Calculator</title>
 </head>
 
 <body>
-  <h1>Calculator JS</h1>
+  <h1>Calculator</h1>
   <div class="calculator">
     <div class="calculator__top">
-      <div class="calculator__top-operation" data-operation></div>
-      <div class="calculator__top-total" data-operand=""></div>
+      <div class="calculator__top-history">
+        <div class="calculator__secondary-operand" data-secondary-operand>12</div>
+        <div class="calculator__top-operation" data-operation>*</div>
+      </div>
+      <div class="calculator__primary-operand" data-primary-operand>12</div>
     </div>
     <div class="calculator__bottom">
       <button data-all-clear>AC</button>
@@ -43,6 +46,10 @@
       <button data-point>.</button>
       <button data-equals>=</button>
     </div>
+  </div>
+
+  <div class="notification">
+    11 Digits Limit
   </div>
 </body>
 

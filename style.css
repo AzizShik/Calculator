@@ -13,6 +13,7 @@
   --btnHover: #00396e;
   --btnActive: #005db2;
   --total: #111;
+  --error: rgb(204, 36, 36);
 }
 
 body {
@@ -51,6 +52,10 @@ button svg path {
   fill: var(--color1);
 }
 
+svg {
+  pointer-events: none;
+}
+
 button:hover {
   background-color: var(--btnHover);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -76,7 +81,7 @@ button:active {
 }
 
 .calculator__top {
-  min-height: 160px;
+  min-height: 140px;
   margin-bottom: 40px;
   text-align: right;
   border: 3px solid var(--color1);
@@ -84,11 +89,27 @@ button:active {
   padding: 15px;
 }
 
-.calculator__top-operation {
-  min-height: 25px;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 5px;
+.calculator__top-history {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-height: 40px;
 }
+
+.calculator__secondary-operand {
+  font-size: 32px;
+}
+
+.calculator__top-operation {
+  font-size: 32px;
+}
+
+.calculator__primary-operand {
+  font-size: 48px;
+  min-height: 60px;
+}
+
 
 .calculator__top-total {
   font-weight: 900;
@@ -102,12 +123,6 @@ button:active {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-}
-
-.calculator__bottom button {
-}
-
-.operation-minus {
 }
 
 .operation-plus {
@@ -125,4 +140,24 @@ button[data-equals] {
 
 button[data-point] {
   grid-row: span 2;
+}
+
+.notification {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 20px;
+  color: var(--color1);
+  background-color: var(--error);
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 700;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.notification.active {
+  opacity: 1;
+  visibility: visible;
 }
