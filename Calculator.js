@@ -15,10 +15,6 @@ export default class Calculator {
   }
 
   addDigit(value) {
-    if (this.primaryOperand.textContent.length >= 11) {
-      this.limit();
-      return;
-    }
     if (this.primaryOperand.textContent[0] === '0') {
       this.primaryOperand.textContent = value;
       return;
@@ -56,20 +52,8 @@ export default class Calculator {
       value1,
       value2
     );
-    if (this.primaryOperand.textContent.length >= 11) {
-      this.limit();
-      this.primaryOperand.textContent = value2;
-      return;
-    }
     this.secondaryOperand.textContent = '';
     this.operation.textContent = '';
-  }
-
-  limit() {
-    this.notification.classList.add('active');
-    setTimeout(() => {
-      this.notification.classList.remove('active');
-    }, 1500);
   }
 }
 
